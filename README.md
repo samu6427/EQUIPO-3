@@ -27,7 +27,7 @@ Metodología
 
 2. Intersección: al sustituir el cono en la esfera se obtiene z = √2 y ρ = 2.
    
-3.Sistema de coordenadas: esféricas, porque todos los límites quedan constantes.
+3. Sistema de coordenadas: esféricas, porque todos los límites quedan constantes.
 
 4. Transformación:
 
