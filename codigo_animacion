@@ -1,0 +1,26 @@
+% Animacion: solido dentro de la esfera x^2+y^2+z^2=4 y arriba del cono z=sqrt(x^2+y^2)
+clear; clc; close all
+R = 2;
+v = VideoWriter('sector_esfera_cono.mp4','MPEG-4');
+v.FrameRate = 20; open(v);
+fig = figure('Color','w');
+
+thMax = linspace(0.05, 2*pi, 80);
+for k = 1:numel(thMax)
+    clf; hold on
+    % Casquete esferico (hasta thMax)
+    [th,ph] = meshgrid(linspace(0,thMax(k),50), linspace(0,pi/4,25));
+    surf(R*sin(ph).*cos(th), R*sin(ph).*sin(th), R*cos(ph), ...
+         'FaceColor',[0.2 0.5 0.9],'FaceAlpha',0.7,'EdgeColor','none');
+    % Cono
+    [r,t] = meshgrid(linspace(0,R/sqrt(2),20), linspace(0,thMax(k),50));
+    surf(r.*cos(t), r.*sin(t), r, ...
+         'FaceColor',[0.9 0.4 0.2],'FaceAlpha',0.7,'EdgeColor','none');
+    axis equal; axis([-2 2 -2 2 0 2]);
+    view(35,25); camlight; grid on
+    xlabel x; ylabel y; zlabel z
+    title(sprintf('\\theta de 0 a %.2f rad',thMax(k)))
+    writeVideo(v, getframe(fig));
+end
+close(v);
+disp('Video guardado: sector_esfera_cono.mp4')
