@@ -1,9 +1,15 @@
 # EQUIPO-3
 
 Integrantes:
--Hernandez Olaya Luis Eduardo 
+
+-Guerrero Martinez Enrique Rafael.
+
+-Hernandez Olaya Luis Eduardo .
+
 -Hurtado Cervantes Samuel.
+
 Integrales triples en coordenadas esféricas
+
 Volumen del sólido dentro de una esfera y arriba de un cono.
 
 Problema:
