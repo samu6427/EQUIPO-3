@@ -1,0 +1,8 @@
+% Verificacion numerica del volumen en coordenadas esfericas
+clear; clc
+f = @(rho,phi,theta) rho.^2 .* sin(phi);
+V  = integral3(f, 0,2, 0,pi/4, 0,2*pi);
+Vx = 8*pi/3*(2 - sqrt(2));
+fprintf('Valor numerico (integral3): %.6f\n', V);
+fprintf('Valor exacto:               %.6f\n', Vx);
+fprintf('Error absoluto:             %.2e\n', abs(V - Vx));
